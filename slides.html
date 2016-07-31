@@ -1,0 +1,79 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<title>Giphslide presentation</title>
+<style>
+body {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+}
+.slide {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.slide>h1 {
+  height: 10%;
+}
+.slide>img {
+  height: 90%;
+}
+</style>
+</head>
+<body>
+<div class="slide" id="slide0">
+<h1>Giphslide presentation</h1>
+<img src="https://media4.giphy.com/media/5WjwkbIHsRzdm/200.gif" />
+</div>
+<div class="slide" id="slide1">
+<h1>Who are the business angels</h1>
+<img src="https://media4.giphy.com/media/e3hN19qMrI6Yg/200.gif" />
+</div>
+<div class="slide" id="slide2">
+<h1>What is giphy</h1>
+<img src="https://media0.giphy.com/media/xT4uQumDmpqBTckfhC/200.gif" />
+</div>
+<div class="slide" id="slide3">
+<h1>Wtf is this</h1>
+<img src="https://media1.giphy.com/media/IftjW2wWgkzGE/200.gif" />
+</div>
+<div class="slide" id="slide4">
+<h1>Htf does it work</h1>
+<img src="https://media1.giphy.com/media/FPDZkICkeu3VS/200.gif" />
+</div>
+<div class="slide" id="slide5">
+<h1>Why use it</h1>
+<img src="https://media1.giphy.com/media/NgB5znnI0qnMk/200.gif" />
+</div>
+<div class="slide" id="slide6">
+<h1>Investors welcome</h1>
+<img src="https://media4.giphy.com/media/EhvVoeXC1PIIM/200.gif" />
+</div>
+<div class="slide" id="slide7">
+<h1>Thanks</h1>
+<img src="https://media2.giphy.com/media/6tHy8UAbv3zgs/200.gif" />
+</div>
+
+<script>
+var counter = 0;
+window.onload = function() {
+  alert('Presentation loaded!');
+  $('.slide').hide();
+  $('#slide0').show();
+};
+$(document).keydown(function(e) {
+  $('.slide').hide();
+  if (e.which == 37) {
+    counter = counter == 0 ? 0 : counter - 1;
+  } else {
+    counter = counter == ($('.slide').length - 1) ? counter : counter + 1;
+  }
+  $('#slide' + counter).show();
+});
+</script>
+</body>
+</html>
